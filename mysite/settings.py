@@ -25,7 +25,7 @@ SECRET_KEY = '%gbg(%o#9*()x(fd8pftau-)p4s8iek%%hxvn3m9boh2yh)b^%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['35.73.173.37']
 
 
 # Application definition
@@ -76,10 +76,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dbmaster',
+        'USER': 'dbmasteruser',
+        'PASSWORD': '`>X5Q}&r5#i-ye3ox]i$:y4k?A]9o>&X',
+        'HOST': 'ls-1d0fb0af9e17745892be437633904adaf733fb42.cbqzklfqxham.ap-northeast-1.rds.amazonaws.com',
+    
+        },
     }
-}
 
 
 # Password validation
@@ -119,6 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/usr/share/nginx/html/static'
+
+MEDIA_ROOT = '/usr/share/nginx/html/media'
 
 LOGIN_URL = 'register:login'
 LOGIN_REDIRECT_URL = 'register:index'
